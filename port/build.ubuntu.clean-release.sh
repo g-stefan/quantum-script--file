@@ -3,6 +3,6 @@
 # http://unlicense.org/
 # Created by Grigore Stefan <g_stefan@yahoo.com>
 
-echo "-> clean-local-release quantum-script-extension-file"
+echo "-> clean-release quantum-script-extension-file"
 
 rm -rf release
