@@ -1,6 +1,6 @@
 --lib qse-file
 --project-base=quantum-script-extension-file
---source-is-separate
+--build-include
 --use-project=quantum-script.static
 --use-project=qse-buffer.static
 --install-dev
