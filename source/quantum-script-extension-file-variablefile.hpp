@@ -48,38 +48,26 @@ namespace Quantum {
 				class VariableFile :
 					public Variable {
 						XYO_DISALLOW_COPY_ASSIGN_MOVE(VariableFile);
+						XYO_DYNAMIC_TYPE_DEFINE(QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT, VariableFile);
 					protected:
 						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT static const char *strTypeFile;
-						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT static const char *typeFileKey;
-						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT static const void *typeFile;
 					public:
-
 						XYO::File value;
 
-						inline VariableFile() {
-							variableType = registerType(typeFile, typeFileKey);
-						};
+						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT VariableFile();
 
 						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT void activeDestructor();
 
 						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT static Variable *newVariable();
 
-						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT String getType();
+						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT String getVariableType();
 
-						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT Variable &operatorReference(Symbol symbolId);
 						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT Variable *instancePrototype();
 
 						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT Variable *clone(SymbolList &inSymbolList);
 
 						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT bool toBoolean();
 						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT String toString();
-						//
-						inline static bool isVariableFile(const Variable *value) {
-							if(typeFile == nullptr) {
-								typeFile = registerType(typeFile, typeFileKey);
-							};
-							return (value->variableType == typeFile);
-						};
 
 				};
 

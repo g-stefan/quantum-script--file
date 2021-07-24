@@ -65,7 +65,7 @@ namespace Quantum {
 					fileContext->prototypeFile.newMemory();
 
 					defaultPrototypeFunction = (VariableFunction *)VariableFunction::newVariable(nullptr, nullptr, nullptr, functionFile, nullptr, nullptr);
-					((Context::getGlobalObject())->operatorReferenceOwnProperty(fileContext->symbolFunctionFile))=defaultPrototypeFunction;
+					(Context::getGlobalObject())->setPropertyBySymbol(fileContext->symbolFunctionFile, defaultPrototypeFunction);
 					fileContext->prototypeFile = defaultPrototypeFunction->prototype;
 
 				};
@@ -74,14 +74,14 @@ namespace Quantum {
 #ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
 					printf("- script-is-file\n");
 #endif
-					return VariableBoolean::newVariable(VariableFile::isVariableFile(arguments->index(0)));
+					return VariableBoolean::newVariable(TIsType<VariableFile>(arguments->index(0)));
 				};
 
 				static TPointer<Variable> fileOpenReadOnly(VariableFunction *function, Variable *this_, VariableArray *arguments) {
 #ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
 					printf("- file-open-read-only\n");
 #endif
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -93,7 +93,7 @@ namespace Quantum {
 					printf("- file-open-write\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -105,7 +105,7 @@ namespace Quantum {
 					printf("- file-open-read-and-write\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -117,7 +117,7 @@ namespace Quantum {
 					printf("- file-open-append\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -130,7 +130,7 @@ namespace Quantum {
 					printf("- file-open-stdin\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -142,7 +142,7 @@ namespace Quantum {
 					printf("- file-open-stdout\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -154,7 +154,7 @@ namespace Quantum {
 					printf("- file-open-stder\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -169,11 +169,11 @@ namespace Quantum {
 					String  retV;
 					Number ln;
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
-					if(VariableUndefined::isVariableUndefined(arguments->index(0))) {
+					if(TIsTypeExact<VariableUndefined>(arguments->index(0))) {
 						ln = 16384;
 					} else {
 						ln = (arguments->index(0))->toNumber();
@@ -197,11 +197,11 @@ namespace Quantum {
 					String  retV;
 					Number ln;
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
-					if(VariableUndefined::isVariableUndefined(arguments->index(0))) {
+					if(TIsTypeExact<VariableUndefined>(arguments->index(0))) {
 						ln = 16384;
 					} else {
 						ln = (arguments->index(0))->toNumber();
@@ -222,7 +222,7 @@ namespace Quantum {
 					printf("- file-write\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -235,7 +235,7 @@ namespace Quantum {
 					printf("- file-write-ln\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -248,7 +248,7 @@ namespace Quantum {
 					printf("- file-close\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -262,7 +262,7 @@ namespace Quantum {
 					printf("- file-flush\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -277,7 +277,7 @@ namespace Quantum {
 					printf("- file-seek-from-begin\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -300,7 +300,7 @@ namespace Quantum {
 					printf("- file-seek\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -322,7 +322,7 @@ namespace Quantum {
 					printf("- file-seek-from-end\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -346,7 +346,7 @@ namespace Quantum {
 #endif
 
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -364,17 +364,17 @@ namespace Quantum {
 					size_t readLn;
 					Number ln;
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
 					TPointerX<Variable> &buffer(arguments->index(0));
 
-					if(!Extension::Buffer::VariableBuffer::isVariableBuffer(buffer)) {
+					if(!TIsType<Extension::Buffer::VariableBuffer>(buffer)) {
 						throw(Error("invalid parameter"));
 					};
 
-					if(VariableUndefined::isVariableUndefined(arguments->index(1))) {
+					if(TIsTypeExact<VariableUndefined>(arguments->index(1))) {
 						ln = 16384;
 					} else {
 						ln = (arguments->index(1))->toNumber();
@@ -401,13 +401,13 @@ namespace Quantum {
 					printf("- file-write-from-buffer\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
 					TPointerX<Variable> &buffer(arguments->index(0));
 
-					if(!Extension::Buffer::VariableBuffer::isVariableBuffer(buffer)) {
+					if(!TIsType<Extension::Buffer::VariableBuffer>(buffer)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -422,13 +422,13 @@ namespace Quantum {
 					printf("- file-become-owner\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
 					TPointerX<Variable> &value = arguments->index(0);
 
-					if(!VariableFile::isVariableFile(value)) {
+					if(!TIsType<VariableFile>(value)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -443,13 +443,13 @@ namespace Quantum {
 					printf("- file-link-owner\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
 					TPointerX<Variable> &value = arguments->index(0);
 
-					if(!VariableFile::isVariableFile(value)) {
+					if(!TIsType<VariableFile>(value)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -464,7 +464,7 @@ namespace Quantum {
 					printf("- file-unlink-owner\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -480,13 +480,13 @@ namespace Quantum {
 					printf("- file-transfer-owner\n");
 #endif
 
-					if(!VariableFile::isVariableFile(this_)) {
+					if(!TIsType<VariableFile>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
 					TPointerX<Variable> &value = arguments->index(0);
 
-					if(!VariableFile::isVariableFile(value)) {
+					if(!TIsType<VariableFile>(value)) {
 						throw(Error("invalid parameter"));
 					};
 

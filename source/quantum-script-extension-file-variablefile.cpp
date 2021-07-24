@@ -28,20 +28,20 @@ namespace Quantum {
 
 				using namespace XYO;
 
-				const char *VariableFile::typeFileKey = "{81FA9545-8011-4BE0-9268-90383DDF8793}";
-				const void *VariableFile::typeFile;
+				XYO_DYNAMIC_TYPE_IMPLEMENT(VariableFile, "{81FA9545-8011-4BE0-9268-90383DDF8793}");
+
 				const char *VariableFile::strTypeFile = "File";
 
-				String VariableFile::getType() {
+				VariableFile::VariableFile() {
+					XYO_DYNAMIC_TYPE_PUSH(VariableFile);
+				};
+
+				String VariableFile::getVariableType() {
 					return strTypeFile;
 				};
 
 				Variable *VariableFile::newVariable() {
 					return (Variable *) TMemory<VariableFile>::newMemory();
-				};
-
-				Variable &VariableFile::operatorReference(Symbol symbolId) {
-					return operatorReferenceX(symbolId, (Extension::File::getContext())->prototypeFile->prototype);
 				};
 
 				Variable *VariableFile::instancePrototype() {
