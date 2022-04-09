@@ -11,14 +11,13 @@
 #define QUANTUM_SCRIPT_VARIABLEFILE_HPP
 
 #ifndef QUANTUM_SCRIPT_VARIABLE_HPP
-#include "quantum-script-variable.hpp"
+#	include "quantum-script-variable.hpp"
 #endif
 
 namespace Quantum {
 	namespace Script {
 		namespace Extension {
 			namespace File {
-
 
 				class VariableFile;
 
@@ -28,15 +27,12 @@ namespace Quantum {
 	};
 };
 
-
 namespace XYO {
 	namespace ManagedMemory {
-		template<>
-		class TMemory<Quantum::Script::Extension::File::VariableFile>:
-			public TMemoryPoolActive<Quantum::Script::Extension::File::VariableFile> {};
+		template <>
+		class TMemory<Quantum::Script::Extension::File::VariableFile> : public TMemoryPoolActive<Quantum::Script::Extension::File::VariableFile> {};
 	};
 };
-
 
 namespace Quantum {
 	namespace Script {
@@ -45,12 +41,13 @@ namespace Quantum {
 
 				using namespace XYO;
 
-				class VariableFile :
-					public Variable {
+				class VariableFile : public Variable {
 						XYO_DISALLOW_COPY_ASSIGN_MOVE(VariableFile);
 						XYO_DYNAMIC_TYPE_DEFINE(QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT, VariableFile);
+
 					protected:
 						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT static const char *strTypeFile;
+
 					public:
 						XYO::File value;
 
@@ -68,7 +65,6 @@ namespace Quantum {
 
 						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT bool toBoolean();
 						QUANTUM_SCRIPT_EXTENSION_FILE_EXPORT String toString();
-
 				};
 
 			};
@@ -76,6 +72,4 @@ namespace Quantum {
 	};
 };
 
-
 #endif
-

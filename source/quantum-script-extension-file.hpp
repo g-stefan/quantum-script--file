@@ -11,23 +11,23 @@
 #define QUANTUM_SCRIPT_EXTENSION_FILE_HPP
 
 #ifndef QUANTUM_SCRIPT_HPP
-#include "quantum-script.hpp"
+#	include "quantum-script.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_FILE__EXPORT_HPP
-#include "quantum-script-extension-file--export.hpp"
+#	include "quantum-script-extension-file--export.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_FILE_COPYRIGHT_HPP
-#include "quantum-script-extension-file-copyright.hpp"
+#	include "quantum-script-extension-file-copyright.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_FILE_LICENSE_HPP
-#include "quantum-script-extension-file-license.hpp"
+#	include "quantum-script-extension-file-license.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_FILE_VERSION_HPP
-#include "quantum-script-extension-file-version.hpp"
+#	include "quantum-script-extension-file-version.hpp"
 #endif
 
 namespace Quantum {
@@ -37,11 +37,10 @@ namespace Quantum {
 
 				using namespace Quantum::Script;
 
-				class FileContext:
-					public Object {
+				class FileContext : public Object {
 						XYO_DISALLOW_COPY_ASSIGN_MOVE(FileContext);
-					public:
 
+					public:
 						Symbol symbolFunctionFile;
 						TPointerX<Prototype> prototypeFile;
 
@@ -59,4 +58,3 @@ namespace Quantum {
 };
 
 #endif
-

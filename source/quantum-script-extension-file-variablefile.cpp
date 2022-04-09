@@ -19,12 +19,10 @@
 #include "quantum-script-extension-file.hpp"
 #include "quantum-script-extension-file-variablefile.hpp"
 
-
 namespace Quantum {
 	namespace Script {
 		namespace Extension {
 			namespace File {
-
 
 				using namespace XYO;
 
@@ -41,7 +39,7 @@ namespace Quantum {
 				};
 
 				Variable *VariableFile::newVariable() {
-					return (Variable *) TMemory<VariableFile>::newMemory();
+					return (Variable *)TMemory<VariableFile>::newMemory();
 				};
 
 				Variable *VariableFile::instancePrototype() {
@@ -70,5 +68,3 @@ namespace Quantum {
 		};
 	};
 };
-
-
