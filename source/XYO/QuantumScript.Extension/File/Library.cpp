@@ -49,14 +49,14 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> isFile(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- script-is-file\n");
 #endif
 		return VariableBoolean::newVariable(TIsType<VariableFile>(arguments->index(0)));
 	};
 
 	static TPointer<Variable> fileOpenReadOnly(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-open-read-only\n");
 #endif
 		if (!TIsType<VariableFile>(this_)) {
@@ -67,7 +67,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileOpenWrite(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-open-write\n");
 #endif
 
@@ -79,7 +79,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileOpenReadAndWrite(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-open-read-and-write\n");
 #endif
 
@@ -91,7 +91,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileOpenAppend(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-open-append\n");
 #endif
 
@@ -103,7 +103,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileOpenStdIn(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-open-stdin\n");
 #endif
 
@@ -115,7 +115,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileOpenStdOut(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-open-stdout\n");
 #endif
 
@@ -127,7 +127,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileOpenStdErr(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-open-stder\n");
 #endif
 
@@ -139,7 +139,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileRead(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-read\n");
 #endif
 		String retV;
@@ -166,7 +166,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileReadLn(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-read-ln\n");
 #endif
 		String retV;
@@ -193,7 +193,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileWrite(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-write\n");
 #endif
 
@@ -205,7 +205,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileWriteLn(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-write-ln\n");
 #endif
 
@@ -217,7 +217,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileClose(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-close\n");
 #endif
 
@@ -231,7 +231,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileFlush(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-flush\n");
 #endif
 
@@ -245,7 +245,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileSeekFromBegin(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-seek-from-begin\n");
 #endif
 
@@ -265,7 +265,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileSeek(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-seek\n");
 #endif
 
@@ -284,7 +284,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileSeekFromEnd(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-seek-from-end\n");
 #endif
 
@@ -304,7 +304,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileSeekTell(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-seek-tell\n");
 #endif
 
@@ -317,7 +317,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileReadToBuffer(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-read-to-buffer\n");
 #endif
 		size_t readLn;
@@ -356,7 +356,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileWriteFromBuffer(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-write-from-buffer\n");
 #endif
 
@@ -374,7 +374,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileBecomeOwner(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-become-owner\n");
 #endif
 
@@ -394,7 +394,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileLinkOwner(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-link-owner\n");
 #endif
 
@@ -414,7 +414,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileUnLinkOwner(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-unlink-owner\n");
 #endif
 
@@ -428,7 +428,7 @@ namespace XYO::QuantumScript::Extension::File {
 	};
 
 	static TPointer<Variable> fileTransferOwner(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- file-transfer-owner\n");
 #endif
 
