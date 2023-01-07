@@ -150,7 +150,7 @@ namespace XYO::QuantumScript::Extension::File {
 		};
 
 		if (TIsTypeExact<VariableUndefined>(arguments->index(0))) {
-			ln = 16384;
+			ln = 32768;
 		} else {
 			ln = (arguments->index(0))->toNumber();
 			if (isnan(ln) || isinf(ln) || signbit(ln)) {
@@ -177,7 +177,7 @@ namespace XYO::QuantumScript::Extension::File {
 		};
 
 		if (TIsTypeExact<VariableUndefined>(arguments->index(0))) {
-			ln = 16384;
+			ln = 32768;
 		} else {
 			ln = (arguments->index(0))->toNumber();
 			if (isnan(ln) || isinf(ln) || signbit(ln)) {
@@ -334,7 +334,7 @@ namespace XYO::QuantumScript::Extension::File {
 		};
 
 		if (TIsTypeExact<VariableUndefined>(arguments->index(1))) {
-			ln = 16384;
+			ln = 32768;
 		} else {
 			ln = (arguments->index(1))->toNumber();
 			if (isnan(ln) || signbit(ln) || ln == 0.0) {
