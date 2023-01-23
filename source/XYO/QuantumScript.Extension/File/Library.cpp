@@ -494,7 +494,7 @@ namespace XYO::QuantumScript::Extension::File {
 };
 
 #ifdef XYO_COMPILE_DYNAMIC_LIBRARY
-extern "C" void quantumScriptExtension(XYO::QuantumScript::Executive *executive, void *extensionId) {
+extern "C" XYO_QUANTUMSCRIPT_EXTENSION_FILE_EXPORT void quantumScriptExtension(XYO::QuantumScript::Executive *executive, void *extensionId) {
 	XYO::QuantumScript::Extension::File::initExecutive(executive, extensionId);
 };
 #endif
