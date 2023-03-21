@@ -454,7 +454,7 @@ namespace XYO::QuantumScript::Extension::File {
 	void initExecutive(Executive *executive, void *extensionId) {
 
 		String info = "File\r\n";
-		info << License::shortLicense();
+		info << License::shortLicense().c_str();
 
 		executive->setExtensionName(extensionId, "File");
 		executive->setExtensionInfo(extensionId, info);
