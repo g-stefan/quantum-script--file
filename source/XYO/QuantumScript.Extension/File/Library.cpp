@@ -158,7 +158,7 @@ namespace XYO::QuantumScript::Extension::File {
 			};
 		};
 
-		if (StreamX::read(((VariableFile *)this_)->value, retV, ln)) {
+		if (Stream::read(((VariableFile *)this_)->value, retV, ln)) {
 			return VariableString::newVariable(retV);
 		};
 
@@ -185,7 +185,7 @@ namespace XYO::QuantumScript::Extension::File {
 			};
 		};
 
-		if (StreamX::readLn(((VariableFile *)this_)->value, retV, ln)) {
+		if (Stream::readLn(((VariableFile *)this_)->value, retV, ln)) {
 			return VariableString::newVariable(retV);
 		};
 
@@ -201,7 +201,7 @@ namespace XYO::QuantumScript::Extension::File {
 			throw(Error("invalid parameter"));
 		};
 
-		return VariableNumber::newVariable((Number)StreamX::write(((VariableFile *)this_)->value, (arguments->index(0))->toString()));
+		return VariableNumber::newVariable((Number)Stream::write(((VariableFile *)this_)->value, (arguments->index(0))->toString()));
 	};
 
 	static TPointer<Variable> fileWriteLn(VariableFunction *function, Variable *this_, VariableArray *arguments) {
@@ -213,7 +213,7 @@ namespace XYO::QuantumScript::Extension::File {
 			throw(Error("invalid parameter"));
 		};
 
-		return VariableNumber::newVariable((Number)StreamX::writeLn(((VariableFile *)this_)->value, (arguments->index(0))->toString()));
+		return VariableNumber::newVariable((Number)Stream::writeLn(((VariableFile *)this_)->value, (arguments->index(0))->toString()));
 	};
 
 	static TPointer<Variable> fileClose(VariableFunction *function, Variable *this_, VariableArray *arguments) {
