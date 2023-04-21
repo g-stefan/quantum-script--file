@@ -373,80 +373,6 @@ namespace XYO::QuantumScript::Extension::File {
 		return VariableNumber::newVariable((Number)(((VariableFile *)this_)->value.write(((Extension::Buffer::VariableBuffer *)buffer.value())->buffer.buffer, ((Extension::Buffer::VariableBuffer *)buffer.value())->buffer.length)));
 	};
 
-	static TPointer<Variable> fileBecomeOwner(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
-		printf("- file-become-owner\n");
-#endif
-
-		if (!TIsType<VariableFile>(this_)) {
-			throw(Error("invalid parameter"));
-		};
-
-		TPointerX<Variable> &value = arguments->index(0);
-
-		if (!TIsType<VariableFile>(value)) {
-			throw(Error("invalid parameter"));
-		};
-
-		((VariableFile *)this_)->value.becomeOwner(((VariableFile *)(value.value()))->value);
-
-		return Context::getValueUndefined();
-	};
-
-	static TPointer<Variable> fileLinkOwner(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
-		printf("- file-link-owner\n");
-#endif
-
-		if (!TIsType<VariableFile>(this_)) {
-			throw(Error("invalid parameter"));
-		};
-
-		TPointerX<Variable> &value = arguments->index(0);
-
-		if (!TIsType<VariableFile>(value)) {
-			throw(Error("invalid parameter"));
-		};
-
-		((VariableFile *)this_)->value.linkOwner(((VariableFile *)(value.value()))->value);
-
-		return Context::getValueUndefined();
-	};
-
-	static TPointer<Variable> fileUnLinkOwner(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
-		printf("- file-unlink-owner\n");
-#endif
-
-		if (!TIsType<VariableFile>(this_)) {
-			throw(Error("invalid parameter"));
-		};
-
-		((VariableFile *)this_)->value.unLinkOwner();
-
-		return Context::getValueUndefined();
-	};
-
-	static TPointer<Variable> fileTransferOwner(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
-		printf("- file-transfer-owner\n");
-#endif
-
-		if (!TIsType<VariableFile>(this_)) {
-			throw(Error("invalid parameter"));
-		};
-
-		TPointerX<Variable> &value = arguments->index(0);
-
-		if (!TIsType<VariableFile>(value)) {
-			throw(Error("invalid parameter"));
-		};
-
-		((VariableFile *)this_)->value.transferOwner(((VariableFile *)(value.value()))->value);
-
-		return Context::getValueUndefined();
-	};
-
 	void registerInternalExtension(Executive *executive) {
 		executive->registerInternalExtension("File", initExecutive);
 	};
@@ -485,10 +411,6 @@ namespace XYO::QuantumScript::Extension::File {
 		executive->setFunction2("File.prototype.seekTell()", fileSeekTell);
 		executive->setFunction2("File.prototype.readToBuffer(buffer)", fileReadToBuffer);
 		executive->setFunction2("File.prototype.writeFromBuffer(buffer)", fileWriteFromBuffer);
-		executive->setFunction2("File.prototype.becomeOwner(file)", fileBecomeOwner);
-		executive->setFunction2("File.prototype.linkOwner(file)", fileLinkOwner);
-		executive->setFunction2("File.prototype.unLinkOwner(file)", fileUnLinkOwner);
-		executive->setFunction2("File.prototype.transferOwner(file)", fileTransferOwner);
 	};
 
 };

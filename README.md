@@ -22,10 +22,6 @@ File.prototype.seek(pos);
 File.prototype.seekTell();
 File.prototype.readToBuffer(buffer,ln);
 File.prototype.writeFromBuffer(buffer);
-File.prototype.becomeOwner(file);
-File.prototype.linkOwner(file);
-File.prototype.unLinkOwner(file);
-File.prototype.transferOwner(file);
 ```
 
 ## License
