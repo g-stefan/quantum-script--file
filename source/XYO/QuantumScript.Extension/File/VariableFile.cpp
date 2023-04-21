@@ -38,12 +38,6 @@ namespace XYO::QuantumScript::Extension::File {
 		value.close();
 	};
 
-	Variable *VariableFile::clone(SymbolList &inSymbolList) {
-		VariableFile *out = (VariableFile *)newVariable();
-		out->value.becomeOwner(value);
-		return out;
-	};
-
 	bool VariableFile::toBoolean() {
 		return true;
 	};

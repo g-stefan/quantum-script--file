@@ -45,8 +45,6 @@ namespace XYO::QuantumScript::Extension::File {
 
 			XYO_QUANTUMSCRIPT_EXTENSION_FILE_EXPORT Variable *instancePrototype();
 
-			XYO_QUANTUMSCRIPT_EXTENSION_FILE_EXPORT Variable *clone(SymbolList &inSymbolList);
-
 			XYO_QUANTUMSCRIPT_EXTENSION_FILE_EXPORT bool toBoolean();
 			XYO_QUANTUMSCRIPT_EXTENSION_FILE_EXPORT String toString();
 	};
