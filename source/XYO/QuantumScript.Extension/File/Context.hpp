@@ -14,7 +14,7 @@
 namespace XYO::QuantumScript::Extension::File {
 
 	class FileContext : public Object {
-			XYO_DISALLOW_COPY_ASSIGN_MOVE(FileContext);
+			XYO_PLATFORM_DISALLOW_COPY_ASSIGN_MOVE(FileContext);
 
 		public:
 			Symbol symbolFunctionFile;

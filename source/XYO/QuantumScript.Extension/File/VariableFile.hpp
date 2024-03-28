@@ -26,7 +26,7 @@ namespace XYO::QuantumScript::Extension::File {
 	using namespace XYO;
 
 	class VariableFile : public Variable {
-			XYO_DISALLOW_COPY_ASSIGN_MOVE(VariableFile);
+			XYO_PLATFORM_DISALLOW_COPY_ASSIGN_MOVE(VariableFile);
 			XYO_DYNAMIC_TYPE_DEFINE(XYO_QUANTUMSCRIPT_EXTENSION_FILE_EXPORT, VariableFile);
 
 		protected:
